@@ -1,0 +1,86 @@
+body {
+  background-color: rgba(64, 134, 226, 0.486);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.board {
+  display: flex;
+  display: grid;
+  height: 600px;
+  width: 600px;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 50px;
+}
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 50px;
+  display: flex;
+  border: 5px black solid;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell {
+  color: black;
+  border: 5px solid black;
+  text-align: center;
+  padding-top: 60px;
+  font-size: 50px;
+  border-radius: 20%;
+}
+
+.win {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#Winner {
+  font-size: 5vh;
+  color: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#one-name {
+  margin-top: 2vh;
+  font-size: 45px;
+  display: flex;
+  background-color: rgb(134, 236, 243);
+}
+
+#two-name {
+  display: flex;
+  font-size: 45px;
+  margin-top: 2vh;
+  background-color: rgb(134, 236, 243);
+}
+
+#reset {
+  display: inline-flex;
+  height: 50px;
+  padding: 0;
+  background: rgb(240, 142, 142);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 2vh;
+  font-size: 4vh;
+  font-weight: 500;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+#reset:hover {
+  background: rgb(243, 120, 120);
+}
+#reset:active {
+  background: rgb(238, 110, 110);
+}
