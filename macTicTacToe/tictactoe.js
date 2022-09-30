@@ -34,6 +34,7 @@ board.addEventListener("click", function (e) {
   let newVar = playerWin();
   if (newVar) {
     winner.innerText = newVar;
+    
     gameState.isPlaying = false;
   } else if (draw() === true) {
     winner.innerText = "Draw";
@@ -42,6 +43,7 @@ board.addEventListener("click", function (e) {
     switchPlayers();
   }
   renderBoard();
+  console.log("new var", newVar)
 });
 
 function renderBoard(board, rowidx, colidx) {
