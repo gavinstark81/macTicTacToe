@@ -36,14 +36,13 @@ board.addEventListener("click", function (e) {
     winner.innerText = newVar;
     
     gameState.isPlaying = false;
-  } else if (draw() === true) {
-    winner.innerText = "Draw";
-    gameState.isPlaying = false;
+  // } else if (draw() === true) {
+  //   winner.innerText = "Draw";
+  //   gameState.isPlaying = false;
   } else {
     switchPlayers();
   }
   renderBoard();
-  console.log("new var", newVar)
 });
 
 function renderBoard(board, rowidx, colidx) {
@@ -54,6 +53,8 @@ function renderBoard(board, rowidx, colidx) {
     }
   }
 }
+
+// this function allows players to switch between selsects
 
 function switchPlayers() {
   if (gameState.currentPlayer === "X") {
@@ -125,16 +126,42 @@ function playerWin() {
   return false;
 }
 
+//iterative draw function (when finished with recursion 
+//function comment out the draw on line 40)
+
+// this function checks for draws on the game board
+
+// function draw() {
+//   let drawStr = "";
+//   for (let i = 0; i < gameState.board.length; i++) {
+//     let row = gameState.board[i];
+//     for (let j = 0; j < gameState.board.length; j++) {
+//       let element = gameState.board[i][j];
+//       if (element === null) {
+//         return false;
+//       }
+//     }
+//   }
+//   return true;
+// }
+
+//recursive draw function does not work but on the right track i think
 function draw() {
-  let drawStr = "";
-  for (let i = 0; i < gameState.board.length; i++) {
-    let row = gameState.board[i];
-    for (let j = 0; j < gameState.board.length; j++) {
-      let element = gameState.board[i][j];
-      if (element === null) {
-        return false;
+  // base case
+  if (gameState.board.length === true) {
+    return (winner.innerText("Draw"))
+  }
+  // logic for function to run
+  else {
+    let drawStr = "";
+    for (let i = 0; i < gameState.board.length; i++) {
+      let row = gameState.board[i];
+      for (let j = 0; j < gameState.board.length; j++) {
+        let element = gameState.board[i][j];
+        if (element === null) {
+          return false;
+        }
       }
     }
   }
-  return true;
 }
